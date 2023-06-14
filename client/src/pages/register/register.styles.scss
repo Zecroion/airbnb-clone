@@ -1,0 +1,18 @@
+.c-form{
+    @apply mt-4 grow flex items-center justify-around;
+
+    .form__title{
+        @apply text-4xl text-center mb-4;
+    }   
+
+    form{
+        @apply max-w-md mx-auto;
+
+        .form__register{
+            @apply text-center py-2 text-gray-500;
+            .form__register-cta{
+                @apply underline text-black;
+            }
+        }
+    }
+}
