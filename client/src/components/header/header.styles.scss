@@ -1,0 +1,53 @@
+@import '../../assets/functions/px-to-rem.function.scss';
+
+.c-header{
+    height: rem(80);
+    @apply flex justify-center items-center;
+    .container{
+        @apply flex justify-between;
+        font-weight: 500;
+    
+        .header__logo{
+            @apply flex items-center gap-1;
+            .logo__text{
+                @apply font-bold text-xl;
+            }
+            .logo__photo{
+                @apply w-8 h-8 -rotate-90;
+            }
+        }
+    
+    
+        .header__menu{
+            @apply flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300;
+    
+            .menu__link{
+                @apply border-l border-gray-300;
+            }
+            .menu__search-button{
+                @apply bg-primary text-white p-1 rounded-full;
+            }
+            .menu__icon{
+                @apply w-4 h-4;
+            }
+        }
+    
+    
+        .header__user-menu{
+            @apply flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4;
+            .user-menu__logo{
+                @apply w-6 h-6;
+            }
+        }
+    
+    
+        .header__user-link{
+            @apply bg-gray-500 text-white rounded-full border border-gray-500 overflow-hidden;
+            .user-link__logo{
+                @apply w-6 h-6 ;
+            }
+        }
+
+    }
+   
+}
