@@ -1,17 +1,14 @@
 import express, {Request, Response} from  'express';
 import cookieParser from 'cookie-parser'
-import mongoose from 'mongoose'
 import cors from 'cors'
 import jwt from 'jsonwebtoken'
 import router from './routes/index'
-import dotenv from 'dotenv'
 
-dotenv.config();
 const app = express();
-
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
-const DATABASE_URL: string = process.env.MONGO_URL as string;
+const PORT = 4000;
 
+app.use('/uploads', express.static(__dirname + '/uploads'))
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
@@ -20,19 +17,11 @@ app.use(cors({
 }));
 
 
-function getUserDataFromReq(req: Request, res: Response) {
-  return new Promise((resolve, reject) => {
-    jwt.verify(req.cookies.token, jwtSecret, {}, async (err, userData) => {
-      if (err) throw err;
-      resolve(userData);
-    });
+export const getUserDataFromReq = (req: Request, res: Response) => {
+  return jwt.verify(req.cookies.token, jwtSecret, {}, (err, userData) => {
+    return userData ? userData : 'ERROR';
   });
 }
 
-app.get('/api/test', (req: Request, res: Response) => {
-  mongoose.connect(DATABASE_URL);
-  res.json('test ok');
-});
-
-app.listen(4000, ()=>{console.log('application started ')});
+app.listen(PORT, ()=>{console.log('application started on port' + PORT)});
 app.use('/', router())

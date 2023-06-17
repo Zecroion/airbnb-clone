@@ -9,26 +9,20 @@ const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
 
 export const profile = async (req: Request, res: Response) => {
-  mongoose.connect(DATABASE_URL);
-    if (req.cookies.token) {
-        const token = req.cookies.token;
-        console.log(token);
-        jwt.verify(token, jwtSecret, (err: any, decode: any) => {
-            if (err) throw err;
-            else {
-                
-                console.log(decode)
-                const userDoc = {
-                    name: decode.name,
-                    email: decode.email
-                };
-                res.json(userDoc);
-                return userDoc;
-            }
-        });
-
+    try {
+      const token = req.cookies.token;
+      if (!token) {
+        return res.status(401).json({ code: 401, message: 'Unauthorized' });
+      }
+  
+      const decodedToken: any = jwt.verify(token, jwtSecret);
+      const userDoc = {
+        name: decodedToken.name,
+        email: decodedToken.email
+      };
+      return res.json(userDoc);
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Internal server error' });
     }
-    else {
-        res.json(null);
-    }
-};
+  };
