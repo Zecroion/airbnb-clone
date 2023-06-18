@@ -1,5 +1,7 @@
 {
-    "build": "cd client && npm install && npm run build",
+    "build": {
+        "command": "cd client && npm install && npm run build"
+    },
     "outputDirectory":"client/dist",
     "framework": "react", 
     "rewrites": [
