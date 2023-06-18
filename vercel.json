@@ -1,0 +1,12 @@
+{
+    "build": "cd client && npm install && npm run build",
+    "outputDirectory":"client/dist",
+    "framework": "react", 
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/dist/index.js"
+        }
+    ]
+
+}
