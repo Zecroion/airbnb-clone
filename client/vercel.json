@@ -1,5 +1,6 @@
 {
-    "buildCommand": "npm install && npm run build -s",
+    "buildCommand": "npm install && npm run build -s && serve -s build",
+    
     "outputDirectory":"/build",
     "framework": "create-react-app",
     "rewrites": [
