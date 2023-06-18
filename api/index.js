@@ -21,7 +21,7 @@ app.use((0, cors_1.default)({
     credentials: true,
     origin: true
 }));
-app.options('*', cors_1.default);
+app.options('*', (0, cors_1.default)());
 var getUserDataFromReq = function (req, res) {
     return jsonwebtoken_1.default.verify(req.cookies.token, jwtSecret, {}, function (err, userData) {
         return userData ? userData : 'ERROR';
