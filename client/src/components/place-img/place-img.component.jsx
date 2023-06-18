@@ -1,0 +1,15 @@
+import Image from "../image/image.jsx";
+
+const PlaceImg = ({place,index=0,className=null}) => {
+  if (!place.photos?.length) {
+    return '';
+  }
+  if (!className) {
+    className = 'object-cover';
+  }
+  return (
+    <Image className={className + ' rounded-2xl'} src={place.photos[index]} alt=""/>
+  );
+}
+
+export default PlaceImg;
