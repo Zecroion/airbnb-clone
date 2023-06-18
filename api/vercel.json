@@ -1,0 +1,16 @@
+{
+    "buildCommand":"tsc --project .",
+    "outputDirectory":"/dist",
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/dist/index.js"
+      }
+    ]
+  }
