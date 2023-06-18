@@ -15,9 +15,6 @@ const AccountNav = () => {
         return <Navigate to={'/login'}/>
     }
 
-    if (!ready) {
-        return <div>Loading...</div>
-    }
     
     const linkClasses = (type = null) => {
         let classes = 'inline-flex gap-1 py-2 px-6 rounded-full';
