@@ -21,7 +21,7 @@ import Booking from './pages/booking/booking.component';
 
 import { ToastContainer } from 'react-toastify'
 
-axios.defaults.baseURL = 'http://localhost:4000/api';
+axios.defaults.baseURL = import.meta.env.API_BASEURL;
 axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
