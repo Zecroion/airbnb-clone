@@ -7,8 +7,7 @@ import dotenv from 'dotenv'
 
 dotenv.config();  
 const bcryptSalt = bcrypt.genSaltSync(10);
-const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
-
+const jwtSecret: any = process.env.JWT_SECRET;
 
 
 const createUser = async (name: string, email: string, password: string) => {

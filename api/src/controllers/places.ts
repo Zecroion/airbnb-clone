@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 
 dotenv.config();  
 const DATABASE_URL: string = process.env.MONGO_URL as string;
-const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
+const jwtSecret: any = process.env.JWT_SECRET;
 
 
 export const createPlace = async (req: Request, res: Response) => {

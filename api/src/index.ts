@@ -3,8 +3,12 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import jwt from 'jsonwebtoken'
 import router from './routes/index'
+
+import dotenv from 'dotenv'
+dotenv.config();
+
 const app = express();
-const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
+const jwtSecret: any = process.env.JWT_SECRET;
 const PORT = 4000;
 
 
