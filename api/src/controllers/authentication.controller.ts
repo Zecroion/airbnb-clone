@@ -6,7 +6,6 @@ import { Request, Response } from 'express';
 import dotenv from 'dotenv'
 
 dotenv.config();  
-const DATABASE_URL: string = process.env.MONGO_URL as string;
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
@@ -27,7 +26,11 @@ export const register = async (req: Request, res: Response) => {
     const userDoc = await createUser(name, email, password);
     res.json(userDoc);
   } catch (error:any) {
-    res.status(422).json({ message: error.message });
+    console.log(error)
+    if (error.code === 11000) {
+
+      res.status(422).json({ message: 'Email is already in use!' });
+    }
   }
 };
 
