@@ -1,0 +1,12 @@
+.link {
+    @apply font-bold;
+}
+
+.link:hover{
+    @apply text-primary;
+    transition-duration: 0.3s;
+}
+
+.footer-container {
+    @apply flex justify-center font-normal items-center my-6;
+}
