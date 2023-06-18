@@ -2,7 +2,7 @@ import {Router} from 'express'
 import authentication from './authentication'
 import places from './places';
 import profile from './profile';
-import photoUpload from './photoUpload';
+import photoUpload from './upload-photos';
 import booking from './booking';
 
 const router = Router(); 
