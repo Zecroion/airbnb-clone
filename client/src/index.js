@@ -21,7 +21,7 @@ import Booking from './pages/booking/booking.component';
 
 import { ToastContainer } from 'react-toastify'
 
-axios.defaults.baseURL = import.meta.env.API_BASEURL;
+axios.defaults.baseURL = 'https://airbnb-clone-backend-git-converts-to-js-husseinsamy.vercel.app/api';
 axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
