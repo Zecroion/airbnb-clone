@@ -2,7 +2,7 @@
 
 .c-header{
     height: rem(80);
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center px-4;
     .container{
         @apply flex justify-between;
         font-weight: 500;
@@ -19,7 +19,7 @@
     
     
         .header__menu{
-            @apply flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300;
+            @apply hidden md:flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300;
     
             .menu__link{
                 @apply border-l border-gray-300;

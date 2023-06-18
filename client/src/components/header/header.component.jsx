@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import './header.styles.scss'
-const Header = ({ user }) => {
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/users.context';
+const Header = () => {
+
+  const {user} = useContext(UserContext)
   return (
     <header className="c-header">
       <div className="container">
@@ -72,7 +76,7 @@ const Header = ({ user }) => {
               />
             </svg>
           </div>
-          {!!user && <div>{user.name}</div>}
+          {!!user && (<div>{user.name}</div>)}
         </Link>
       </div>
     </header>
