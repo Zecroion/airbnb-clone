@@ -5,7 +5,7 @@
     "routes": [
         {
           "src": "/(.*)",
-          "dest": "/build/index.html"
+          "dest": "/index.html"
         }
     ]
 }
