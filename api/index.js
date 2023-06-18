@@ -19,7 +19,7 @@ app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use((0, cors_1.default)({
     credentials: true,
-    origin: ['http://localhost:3000', 'https://airbnb-clone-client-git-converts-to-js-husseinsamy.vercel.app'] 
+    origin: true
 }));
 app.options('*', cors_1.default);
 var getUserDataFromReq = function (req, res) {
