@@ -108,7 +108,8 @@ var login = function (req, res) { return __awaiter(void 0, void 0, void 0, funct
                     name: userDoc.name,
                     id: userDoc._id
                 }, jwtSecret, {});
-                res.cookie('token', token).json(userDoc);
+                res.cookie('token', token,{sameSite: 'none',
+                secure: true}).json(userDoc);
                 return [3 /*break*/, 3];
             case 2:
                 err_1 = _b.sent();
