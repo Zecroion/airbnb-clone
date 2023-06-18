@@ -4,6 +4,6 @@ import multer from 'multer'
 
 export default (router: Router) => {
     router.post('/api/upload-by-link', uploadByLink)
-    const photosMiddleware = multer({ dest: 'E:/Hussein/Work/Programming/WebDevelopment/2023/React.js course/airbnb-clone/api/src/uploads/' });
+    const photosMiddleware = multer({ dest: '/tmp/' });
     router.post('/api/upload', photosMiddleware.array('photos', 100), uploadFromFile)
 }
