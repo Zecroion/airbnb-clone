@@ -1,5 +1,11 @@
 {
     "buildCommand": "npm install && npm run build",
     "outputDirectory":"/build",
-    "framework": "create-react-app"
+    "framework": "create-react-app",
+    "routes": [
+        {
+          "src": "/(.*)",
+          "dest": "/build/static/js/main.7ebdf86f.js"
+        }
+    ]
 }
