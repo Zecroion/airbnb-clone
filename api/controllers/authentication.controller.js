@@ -122,7 +122,8 @@ var login = function (req, res) { return __awaiter(void 0, void 0, void 0, funct
 }); };
 exports.login = login;
 var logout = function (req, res) {
-    res.cookie('token', '').json(true);
+    res.cookie('token', '', {sameSite: 'none',
+    secure: true}).json(true);
 };
 exports.logout = logout;
 //# sourceMappingURL=authentication.controller.js.map
